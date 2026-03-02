@@ -1,0 +1,4 @@
+flask
+pandas
+docling
+tabulate  # рекомендуется для to_markdown(), если будете использовать
