@@ -11,8 +11,7 @@ from docling.document_converter import DocumentConverter
 from flask_cors import CORS
 
 # После создания app
-app = Flask(__name__)
-CORS(app)  # Разрешить все источники (для разработки)
+
 
 # --- Настройки ---
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'pptx', 'xlsx', 'png', 'jpg', 'jpeg', 'tiff', 'bmp'} # Добавьте нужные
@@ -22,6 +21,7 @@ TEMP_FILE_TTL = 600  # 10 минут
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
 logging.basicConfig(level=logging.INFO)
+CORS(app)  # Разрешить все источники (для разработки)
 
 # Хранилище для временных данных: {file_id: {'zip_path': Path, 'expires': time.time()}}
 temp_storage = {}
