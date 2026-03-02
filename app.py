@@ -8,6 +8,11 @@ from flask import Flask, request, render_template_string, send_file, url_for
 from werkzeug.utils import secure_filename
 import pandas as pd
 from docling.document_converter import DocumentConverter
+from flask_cors import CORS
+
+# После создания app
+app = Flask(__name__)
+CORS(app)  # Разрешить все источники (для разработки)
 
 # --- Настройки ---
 ALLOWED_EXTENSIONS = {'pdf', 'docx', 'pptx', 'xlsx', 'png', 'jpg', 'jpeg', 'tiff', 'bmp'} # Добавьте нужные
